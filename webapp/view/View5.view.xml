@@ -1,0 +1,57 @@
+<mvc:View controllerName="mabe.cedulainversa.controller.View5"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page id="page5" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+            <Panel id="idPanelViewFour">
+                <f:SimpleForm id="idSimpleFormIDVehiculoViewFive" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                    <f:content>
+                        <Label id="idLabelIDVehiculoViewFive" labelFor="idTextIDVehiculo" text="{i18n>viewFive.idVehiculo}" />
+                        <Text id="idTextIDVehiculoViewFive"/>
+                        <Label id="idLabelLineaTrasporteViewFive" text="{i18n>viewFive.LineaTransporte}" labelFor="idTextLineaTrasporteViewFive"/>
+                        <Text id="idTextLineaTrasporteViewFive"/>
+                        <Label id="idLabelEcoDevolucionViewFive" text="{i18n>viewFive.EcoDevolucion}"/>
+                        <Text id="idTextEcoDevolucionViewFive"/>
+                        <Label id="idLabelPlacasViewFive" text="{i18n>viewFive.Placas}"/>
+                        <Text id="idTextPlacasViewFive"/>
+                        <Label id="idLabelFolioViewFive" text="{i18n>viewFive.Folio}"/>
+                        <Text id="idTextFolioViewFive"/>
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+            <Panel id="idPanelTableFour" headerText="Inspección de piezas">
+                <Table id="idProductsTableFour" inset="false" items="{jsonModelConfig>/RellenoTabla}">
+                    <columns>
+                        <Column>
+                            <Text text="Producto" />
+                        </Column>
+                        <Column>
+                            <Text text="Proveedor" />
+                        </Column>
+                        <Column>
+                            <Text text="Dimenciones" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <Text text="{jsonModelConfig>producto}" />
+                                <Text text="{jsonModelConfig>proveedor}" />
+                                <Text text="{jsonModelConfig>dimenciones}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+	            </Table>
+            </Panel>
+            <HBox justifyContent="End">
+                <Button text="Guardar"/>
+            </HBox>
+        </content>
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,110 @@
+<mvc:View controllerName="mabe.cedulainversa.controller.View3"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page id="page3" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+            <Panel id="idPanelViewThree">
+                <f:SimpleForm id="idSimpleFormIDVehiculoViewThree" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                    <f:content>
+                        <Label id="idLabelIDVehiculoViewThree" labelFor="idTextIDVehiculo" text="{i18n>viewThree.idVehiculo}" />
+                        <Text id="idTextIDVehiculoViewThree"/>
+                        <Label id="idLabelLineaTrasporteViewThree" text="{i18n>viewThree.LineaTransporte}" labelFor="idTextLineaTrasporteViewThree"/>
+                        <Text id="idTextLineaTrasporteViewThree"/>
+                        <Label id="idLabelEcoDevolucionViewThree" text="{i18n>viewThree.EcoDevolucion}"/>
+                        <Text id="idTextEcoDevolucionViewThree"/>
+                        <Label id="idLabelPlacasViewThree" text="{i18n>viewThree.Placas}"/>
+                        <Text id="idTextPlacasViewThree"/>
+                        <Label id="idLabelFolioViewThree" text="{i18n>viewThree.Folio}"/>
+                        <Text id="idTextFolioViewThree"/>
+                    </f:content>
+                </f:SimpleForm>
+            <HBox justifyContent="End">
+                <Label id="idLabelTipoDevolucion" labelFor="idComboBox98" text="Tipo de devolución" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                <ComboBox id="idComboBox98" items="{jsonModelConfig>/ListaFotos}">
+                    <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                </ComboBox>
+            </HBox>
+            </Panel>
+            <Panel id="idPanelTableViewThree" headerText="Información Material Físico">
+                <Table id="idProductsTableThree" inset="false" items="{jsonModelConfig>/RellenoTabla}">
+                    <columns>
+                        <Column>
+                            <Text text="Producto" />
+                        </Column>
+                        <Column>
+                            <Text text="Proveedor" />
+                        </Column>
+                        <Column>
+                            <Text text="Dimenciones" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <Text text="{jsonModelConfig>producto}" />
+                                <Text text="{jsonModelConfig>proveedor}" />
+                                <Text text="{jsonModelConfig>dimenciones}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+	            </Table>
+            </Panel>
+            <Panel id="idPanelTableViewThree2" headerText="Información Rechazo del cliente">
+                <Table id="idProductsTableThree2" inset="false" items="{jsonModelConfig>/RellenoTabla}" class="sapUiSmallMarginBottom">
+                    <columns>
+                        <Column>
+                            <Text text="Producto" />
+                        </Column>
+                        <Column>
+                            <Text text="Proveedor" />
+                        </Column>
+                        <Column>
+                            <Text text="Dimenciones" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <Text text="{jsonModelConfig>producto}" />
+                                <Text text="{jsonModelConfig>proveedor}" />
+                                <Text text="{jsonModelConfig>dimenciones}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+	            </Table>
+            </Panel>
+            <Panel>
+                <HBox>
+                    <Label text="Listado de evidencias" labelFor="idComboBox" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                    <ComboBox id="idComboBox5" items="{jsonModelConfig>/ListaFotos}" width="10rem">
+                        <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                    </ComboBox>
+                    <Button icon="sap-icon://camera" class="sapUiTinyMarginBegin"/>
+                </HBox>
+                <HBox>
+                    <Label text="Listado de evidencias" labelFor="idComboBox" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                    <ComboBox id="idComboBox6" items="{jsonModelConfig>/ListaFotos}" width="10rem">
+                        <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                    </ComboBox>
+                    <Button icon="sap-icon://camera" class="sapUiTinyMarginBegin"/>
+                </HBox>
+                <HBox>
+                    <Label text="Listado de evidencias" labelFor="idComboBox" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                    <ComboBox id="idComboBox7" items="{jsonModelConfig>/ListaFotos}" width="10rem">
+                        <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                    </ComboBox>
+                    <Button icon="sap-icon://camera" class="sapUiTinyMarginBegin"/>
+                </HBox>
+                <HBox justifyContent="End" class="sapUiLargeMarginTop">
+                    <Button text="Guardar" press="toNav"/>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+
+</mvc:View>

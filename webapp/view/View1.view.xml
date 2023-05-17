@@ -1,0 +1,72 @@
+<mvc:View controllerName="mabe.cedulainversa.controller.View1"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page id="page1" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+            <Panel id="idPanelViewOne">
+                	<f:SimpleForm id="idSimpleFormIDVehiculoViewOne" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+			            <f:content>
+                            <Label id="idLabelIDVehiculoViewOne" labelFor="idTextIDVehiculo" text="{i18n>viewOne.idVehiculo}" />
+                            <Text id="idTextIDVehiculoViewOne"/>
+                            <Label id="idLabelLineaTrasporteViewOne" text="{i18n>viewOne.LineaTransporte}" labelFor="idTextLineaTrasporteViewOne"/>
+                            <Text id="idTextLineaTrasporteViewOne"/>
+                            <Label id="idLabelEcoDevolucionViewOne" text="{i18n>viewOne.EcoDevolucion}"/>
+                            <Text id="idTextEcoDevolucionViewOne"/>
+                            <Label id="idLabelPlacasViewOne" text="{i18n>viewOne.Placas}"/>
+                            <Text id="idTextPlacasViewOne"/>
+                            <Label id="idLabelFolioViewOne" text="{i18n>viewOne.Folio}"/>
+                            <Text id="idTextFolioViewOne"/>
+                        </f:content>
+		            </f:SimpleForm>
+            </Panel>
+            <Panel id="idPanelTable">
+                <Table id="idProductsTable" inset="false" items="{jsonModelConfig>/RellenoTabla}">
+                    <columns>
+                        <Column>
+                            <Text text="Producto" />
+                        </Column>
+                        <Column>
+                            <Text text="Proveedor" />
+                        </Column>
+                        <Column>
+                            <Text text="Dimenciones" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <Text text="{jsonModelConfig>producto}" />
+                                <Text text="{jsonModelConfig>proveedor}" />
+                                <Text text="{jsonModelConfig>dimenciones}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+	            </Table>
+            </Panel>
+            <Panel>
+                <Label text="Listado de evidencias" labelFor="idComboBox" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                <ComboBox id="idComboBox" items="{jsonModelConfig>/ListaFotos}" width="12rem">
+                    <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                </ComboBox>
+                <Button icon="sap-icon://camera" class="sapUiTinyMarginBegin"/>
+            </Panel>
+            <Panel>
+                <VBox >
+                    <Button text="Sobrantes/Cambios" width="10rem" class="sapUiTinyMarginBottom"/>
+                    <Button text="Criterios de cobro" width="10rem" class="sapUiTinyMarginBottom"/>
+                    <Button text="Firma de transportista" width="10rem" class="sapUiTinyMarginBottom"/>
+                    <Button text="Inspección de piezas" width="10rem" class="sapUiTinyMarginBottom"/>
+                </VBox>
+                <HBox justifyContent="End" alignContent="End">
+                    <Button text="Guardar" press="toNav"/>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+
+</mvc:View>

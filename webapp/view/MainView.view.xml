@@ -1,0 +1,71 @@
+<mvc:View controllerName="mabe.cedulainversa.controller.MainView"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page id="page" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+            <Panel id="idPanelViewZero">
+                	<f:SimpleForm id="idSimpleFormIDVehiculo" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+			            <f:content>
+                            <Label id="idLabelIDVehiculo" labelFor="idInputIDVehiculo" text="{i18n>viewZero.idVehiculo}" />
+                            <Input id="idInputIDVehiculo" class="sapUiMediumMarginBottom"/>
+                            <Label id="idLabelLineaTrasporte" text="{i18n>viewZero.LineaTransporte}" labelFor="idInputLineaTrasporte"/>
+                            <Input id="idInputLineaTrasporte"/>
+                            <Label id="idLabelEcoDevolucion" text="{i18n>viewZero.EcoDevolucion}"/>
+                            <Input id="idInputEcoDevolucion"/>
+                            <Label id="idLabelPlacas" text="{i18n>viewZero.Placas}"/>
+                            <Input id="idInputPlacas"/>
+                            <Label id="idLabelFolio" text="{i18n>viewZero.Folio}"/>
+                            <Input id="idInputFolio"/>
+                        </f:content>
+		            </f:SimpleForm>
+            </Panel>
+            <Panel id="idPanelRadioButton">
+                <List id="idListTipoDevolucion" items="{jsonModelConfig>/TipoDevolucion}" mode="SingleSelectLeft" includeItemInSelection="true">
+		            <headerToolbar>
+                        <OverflowToolbar id="idToolbar1">
+                            <content>
+                                <Title id="idTitleTipoDevolucion" text="{i18n>viewZero.TipoDevolucion}"/>
+                                <ToolbarSpacer id="idToolbarSpacer1"/>
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+		            <StandardListItem id="idStandardListTipoDevolucion" title="{jsonModelConfig>title}"/>
+	            </List>
+                <List id="idListNegativoEntrega" items="{jsonModelConfig>/NegativoEntrega}" mode="SingleSelectLeft" includeItemInSelection="true" visible="true">
+		            <headerToolbar>
+                        <OverflowToolbar id="idToolbar2">
+                            <content>
+                                <Text id="idTitleNegativoEntrega" text="{i18n>viewZero.NegativoEntrega}"/>
+                                <ToolbarSpacer id="idToolbarSpacer2"/>
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+		            <StandardListItem id="idStandardListNegativoEntrega" title="{jsonModelConfig>title}"/>
+	            </List>
+                <List id="idListEstadoFisico" items="{jsonModelConfig>/EstadoFisico}" mode="SingleSelectLeft" includeItemInSelection="true" visible="true">
+		            <headerToolbar>
+                        <OverflowToolbar id="idToolbar3">
+                            <content>
+                                <Text id="idTitleEstadoFisico" text="{i18n>viewZero.EstadoFisico}"/>
+                                <ToolbarSpacer id="idToolbarSpacer3"/>
+                            </content>
+                        </OverflowToolbar>
+                    </headerToolbar>
+		            <StandardListItem id="idStandardListEstadoFisico" title="{jsonModelConfig>title}"/>
+	            </List>
+            </Panel>
+            <Panel id="idPanelButtons">
+                <HBox id="idHBoxButtons" justifyContent="End" alignContent="End">
+                    <Button id="idButtonGuardarViewZero" text="{i18n>viewZero.Guardar}" press="toViewOne"/>
+                    <Button id="idButtonFolioViewZero" text="{i18n>viewZero.Folio}"/>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+
+</mvc:View>

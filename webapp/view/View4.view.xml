@@ -1,0 +1,84 @@
+<mvc:View controllerName="mabe.cedulainversa.controller.View4"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page id="page4" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+            <Panel id="idPanelViewFour">
+                <f:SimpleForm id="idSimpleFormIDVehiculoViewFour" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="3" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                    <f:content>
+                        <Label id="idLabelIDVehiculoViewFour" labelFor="idTextIDVehiculo" text="{i18n>viewFour.idVehiculo}" />
+                        <Text id="idTextIDVehiculoViewFour"/>
+                        <Label id="idLabelLineaTrasporteViewFour" text="{i18n>viewFour.LineaTransporte}" labelFor="idTextLineaTrasporteViewFour"/>
+                        <Text id="idTextLineaTrasporteViewFour"/>
+                        <Label id="idLabelEcoDevolucionViewFour" text="{i18n>viewFour.EcoDevolucion}"/>
+                        <Text id="idTextEcoDevolucionViewFour"/>
+                        <Label id="idLabelPlacasViewFour" text="{i18n>viewFour.Placas}"/>
+                        <Text id="idTextPlacasViewFour"/>
+                        <Label id="idLabelFolioViewFour" text="{i18n>viewFour.Folio}"/>
+                        <Text id="idTextFolioViewFour"/>
+                    </f:content>
+                </f:SimpleForm>
+            </Panel>
+            <Panel id="idPanelTableFour" headerText="Criterios de cobro">
+                <Table id="idProductsTableFour" inset="false" items="{jsonModelConfig>/RellenoTabla}">
+                    <columns>
+                        <Column>
+                            <Text text="Producto" />
+                        </Column>
+                        <Column>
+                            <Text text="Proveedor" />
+                        </Column>
+                        <Column>
+                            <Text text="Dimenciones" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <Text text="{jsonModelConfig>producto}" />
+                                <Text text="{jsonModelConfig>proveedor}" />
+                                <Text text="{jsonModelConfig>dimenciones}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+	            </Table>
+                <VBox class="sapUiMediumMarginTop">
+                    <Label text="Observaciones"/>
+                    <TextArea width="26rem"/>
+                </VBox>
+            </Panel>
+            <Panel>
+                <HBox>
+                    <Label text="Listado de evidencias" labelFor="idComboBox" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                    <ComboBox id="idComboBox8" items="{jsonModelConfig>/ListaFotos}" width="10rem">
+                        <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                    </ComboBox>
+                    <Button icon="sap-icon://camera" class="sapUiTinyMarginBegin"/>
+                </HBox>
+                <HBox>
+                    <Label text="Listado de evidencias" labelFor="idComboBox" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                    <ComboBox id="idComboBox9" items="{jsonModelConfig>/ListaFotos}" width="10rem">
+                        <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                    </ComboBox>
+                    <Button icon="sap-icon://camera" class="sapUiTinyMarginBegin"/>
+                </HBox>
+                <HBox>
+                    <Label text="Listado de evidencias" labelFor="idComboBox" class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+                    <ComboBox id="idComboBox10" items="{jsonModelConfig>/ListaFotos}" width="10rem">
+                        <core:Item key="{jsonModelConfig>Key}" text="{jsonModelConfig>text}"/>
+                    </ComboBox>
+                    <Button icon="sap-icon://camera" class="sapUiTinyMarginBegin"/>
+                </HBox>
+                <HBox justifyContent="End" class="sapUiLargeMarginTop">
+                    <Button text="Guardar" press="toNav"/>
+                </HBox>
+            </Panel>
+        </content>
+    </Page>
+
+</mvc:View>
